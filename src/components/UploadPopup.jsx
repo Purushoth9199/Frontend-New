@@ -183,7 +183,7 @@ const UploadPopup = (props) => {
             const postVideo = async () => {
               //creating function
               try {
-                const res = await axios.post("/videos", {
+                const res = await axios.post("https://finale.onrender.com/api/videos", {
                   title: title.current.value.trim(),
                   desc: description.current.value.trim(),
                   imgUrl: imageDownloadUrl,
@@ -192,7 +192,7 @@ const UploadPopup = (props) => {
                 });
 
                 props.setIsVidoButtonOpen(false);
-                navigate(`/video/${res.data._id}`);
+                navigate(`https://finale.onrender.com/api/video/${res.data._id}`);
               } catch (err) {
                 console.log(err);
               }
